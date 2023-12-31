@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 // components
 import FaceOrRiskCard from "@/components/Card";
+
+// Utils - libs
+import { ShuffleCardDeck } from "@/lib/ShuffleCards";
 
 interface GameProps {
   id: number;
@@ -49,9 +52,17 @@ const GameRoom = () => {
 
   const gameID = searchParams.get("id");
 
+  // Shuffle decks immediately page loads
+  useEffect(() => {
+    let NewCardDeck = ShuffleCardDeck(GameCard);
+    setGameCard(NewCardDeck);
+
+    return () => {};
+  }, [GameCard]);
+
   const ChooseCard = (e: any) => {
     const lastChildElement = StackCardRef.current?.lastChild;
-    console.log(lastChildElement);
+    // console.log(lastChildElement);
 
     if (cardRef.current && cardRef.current.style) {
       const style = cardRef.current.style;
@@ -79,18 +90,20 @@ const GameRoom = () => {
 
   return (
     <div className="page-not-found w-full min-h-[100dvh] flex flex-col gap-6 justify-center items-center text-center">
-      <div ref={StackCardRef} className="stack_cards" onClick={ChooseCard}>
-        {GameCard.map((card: GameProps) => {
-          return (
-            <FaceOrRiskCard
-              key={card.id}
-              card={card}
-              ChooseCardHandler={ChooseCard}
-              cardRef={cardRef}
-            />
-          );
-        })}
-      </div>
+      <Suspense fallback={<p>Loading decks...</p>}>
+        <div ref={StackCardRef} className="stack_cards" onClick={ChooseCard}>
+          {GameCard.map((card: GameProps) => {
+            return (
+              <FaceOrRiskCard
+                key={card.id}
+                card={card}
+                ChooseCardHandler={ChooseCard}
+                cardRef={cardRef}
+              />
+            );
+          })}
+        </div>
+      </Suspense>
     </div>
   );
 };
