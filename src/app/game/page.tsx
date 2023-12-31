@@ -27,7 +27,6 @@ const GameDares = [
     id: 5,
     dare: "5. Everyone who is still in contact with their ex takes a shot.",
   },
-
 ];
 
 const GameRoom = () => {
@@ -69,7 +68,7 @@ const GameRoom = () => {
   };
 
   return (
-    <div className="page-not-found w-full min-h-screen flex flex-col gap-6 justify-center items-center text-center">
+    <div className="page-not-found w-full min-h-[100dvh] flex flex-col gap-6 justify-center items-center text-center">
       <div ref={StackCardRef} className="stack_cards" onClick={ChooseCard}>
         {GameCard.map((card: { id: number; dare: string }) => {
           return (

@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <main className="page-not-found w-full min-h-screen h-screen py-12">
+    <main className="page-not-found w-full min-h-[100dvh] h-[100dvh] py-12">
       <Spacer>
         <section className="w-full h-full flex flex-col gap-10 justify-center items-center text-center">
           <div className="w-full flex flex-col gap-3">
