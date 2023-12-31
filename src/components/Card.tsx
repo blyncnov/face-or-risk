@@ -15,7 +15,10 @@ const FaceOrRiskCard = ({
       ref={cardRef}
       className="card w-full h-[400px] max-w-[250px] min-w-[250px] min-h-[400px] max-h-[400px] text-[var(--primary-color)] bg-white rounded-lg p-2 shadow cursor-move"
     >
-      <div className="w-full h-full bg-white border border-[#f63f3f7c] rounded-lg p-3 grid grid-rows-[1fr_1fr_auto]">
+      <div
+        // onClick={click}
+        className="w-full h-full bg-white border border-[#f63f3f7c] rounded-lg p-3 grid grid-rows-[1fr_1fr_auto]"
+      >
         <div className="w-full">
           <h1 className="page-title text-5xl face_or_risk_font text-[var(--secondary-color)]">
             Face or Risk

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 
 // components
@@ -27,10 +27,7 @@ const GameDares = [
     id: 5,
     dare: "5. Everyone who is still in contact with their ex takes a shot.",
   },
-  {
-    id: 6,
-    dare: "6. Everyone who is still in contact with their ex takes a shot.",
-  },
+
 ];
 
 const GameRoom = () => {
@@ -90,20 +87,3 @@ const GameRoom = () => {
 };
 
 export default GameRoom;
-
-// let stack = document.querySelector(".stack"); DONE
-
-// [...stack.children].reverse().forEach((i) => stack.append(i));
-
-// stack.addEventListener("click", swap);
-
-// function swap(e) {
-//   let card = document.querySelector(".card:last-child");
-//   if (e.target !== card) return;
-//   card.style.animation = "swap 700ms forwards";
-
-//   setTimeout(() => {
-//     card.style.animation = "";
-//     stack.prepend(card);
-//   }, 700);
-// }
