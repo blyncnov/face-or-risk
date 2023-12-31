@@ -9,23 +9,28 @@ import FaceOrRiskCard from "@/components/Card";
 const GameDares = [
   {
     id: 1,
-    dare: "1. Everyone who is still in contact with their ex takes a shot.",
+    dare: "Everyone who is still in contact with their ex takes a shot.",
   },
   {
     id: 2,
-    dare: "2. Everyone who is still in contact with their ex takes a shot.",
+    dare: "Explain BDSM to your 8-year-old sibling in 30 seconds or take a risk.",
   },
+
   {
     id: 3,
-    dare: "3. Everyone who is still in contact with their ex takes a shot.",
+    dare: "Everyone who has never had sex, take a risk.",
   },
   {
     id: 4,
-    dare: "4. Everyone who is still in contact with their ex takes a shot.",
+    dare: "Anyone putting on white underwear take a risk.",
   },
   {
     id: 5,
-    dare: "5. Everyone who is still in contact with their ex takes a shot.",
+    dare: "Everyone who is single take a risk.",
+  },
+  {
+    id: 6,
+    dare: "Demostrate how to finger a woman or take a risk.",
   },
 ];
 
