@@ -41,12 +41,12 @@ const GameRoom = () => {
 
   const ChooseCard = (e: any) => {
     const lastChildElement = StackCardRef.current?.lastChild;
-    console.log(e.target === lastChildElement);
+    console.log(lastChildElement);
 
     if (cardRef.current && cardRef.current.style) {
-      if (e.target !== lastChildElement) return;
-
       const style = cardRef.current.style;
+
+      if (!lastChildElement.contains(e.target)) return;
 
       if (style) {
         // Add card Animation
@@ -59,10 +59,10 @@ const GameRoom = () => {
         if (style) {
           // Add card Animation
           style.animation = "";
-        }
 
-        // Prepend card
-        StackCardRef.current?.prepend(lastChildElement);
+          // Prepend card
+          StackCardRef.current?.prepend(lastChildElement);
+        }
       }, 700);
     }
   };
