@@ -15,7 +15,11 @@ const GameRoom = () => {
 
   return (
     <div className="page-not-found w-full min-h-screen flex flex-col gap-6 justify-center items-center text-center">
-      <FaceOrRiskCard />
+      <div className="stack_cards">
+        {[1, 2, 3, 4, 5, 6].map((card) => {
+          return <FaceOrRiskCard key={card} card={card} />;
+        })}
+      </div>
     </div>
   );
 };
