@@ -6,7 +6,12 @@ import { useSearchParams } from "next/navigation";
 // components
 import FaceOrRiskCard from "@/components/Card";
 
-const GameDares = [
+interface GameProps {
+  id: number;
+  dare: string;
+}
+
+const GameDares: GameProps[] = [
   {
     id: 1,
     dare: "Everyone who is still in contact with their ex takes a shot.",
@@ -75,12 +80,12 @@ const GameRoom = () => {
   return (
     <div className="page-not-found w-full min-h-[100dvh] flex flex-col gap-6 justify-center items-center text-center">
       <div ref={StackCardRef} className="stack_cards" onClick={ChooseCard}>
-        {GameCard.map((card: { id: number; dare: string }) => {
+        {GameCard.map((card: GameProps) => {
           return (
             <FaceOrRiskCard
               key={card.id}
               card={card}
-              click={ChooseCard}
+              ChooseCardHandler={ChooseCard}
               cardRef={cardRef}
             />
           );

@@ -1,17 +1,22 @@
 import React from "react";
 
+interface GameProps {
+  id: number;
+  dare: string;
+}
+
 const FaceOrRiskCard = ({
   card,
-  click,
+  ChooseCardHandler,
   cardRef,
 }: {
-  card: any;
-  click: any;
-  cardRef: any;
+  card: GameProps;
+  ChooseCardHandler: (e: any) => void;
+  cardRef: React.RefObject<HTMLDivElement>;
 }) => {
   return (
     <div
-      onClick={click}
+      onClick={ChooseCardHandler}
       ref={cardRef}
       className={`card card-${card.id} w-full h-[400px] max-w-[250px] min-w-[250px] min-h-[400px] max-h-[400px] text-[var(--primary-color)] bg-white rounded-lg p-2 shadow cursor-move`}
     >
