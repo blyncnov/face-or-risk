@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 // Components
 import Spacer from "@/components/Spacer";
 import EventConfetti from "@/components/Confetti";
+import FaceOrRiskManual from "@/components/FaceOrRiskManual";
 import FaceOrRiskWaitingRoom from "@/components/FaceOrRiskWaitingRoom";
 
 // Utils - lib
@@ -16,6 +17,7 @@ export default function Home() {
 
   // Waiting state
   const [isWaiting, setIsWaiting] = useState(false);
+  const [isReadManual, setIsReadManual] = useState(false);
 
   // New YEAR confetti state
   const [isExploding, setIsExploding] = useState(true);
@@ -45,7 +47,7 @@ export default function Home() {
             <div className="flex justify-center items-center">
               <p className="py-2 animate-bounce px-4 shadow-md no-underline rounded-full bg-[var(--secondary-color)] text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2">
                 <span className="mr-2 animate-spin">🎊</span>
-                <span className="animate-pulse"> Happy New YEAR</span>
+                <span className="animate-pulse"> Happy New YEAR 2024</span>
               </p>
             </div>
             <div className="game-title text-[30vw] md:text-[12vw] face_or_risk_font">
@@ -76,12 +78,27 @@ export default function Home() {
           </>
         </section>
       </Spacer>
-
       {/* Wait in the Waiting Room for few secs*/}
       {isWaiting && <FaceOrRiskWaitingRoom />}
+      {isReadManual && <FaceOrRiskManual setIsReadManual={setIsReadManual} />}
 
       {/* New YEAR confetti*/}
       {/* <EventConfetti /> */}
+
+      {/* Read Instruction Manual*/}
+      {!isReadManual && (
+        <div className="absolute bottom-6 md:right-6 right-4">
+          <button
+            onClick={() => setIsReadManual(!isReadManual)}
+            title="Read Instruction Manual"
+            className="py-2 cursor-pointer animate-none px-4 shadow-md no-underline rounded-lg
+           bg-[var(--black)] text-white font-sans font-semibold text-sm border-orange btn-primary
+            hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2"
+          >
+            Read GAME rules
+          </button>
+        </div>
+      )}
     </main>
   );
 }
