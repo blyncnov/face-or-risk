@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 // Components
 import Spacer from "@/components/Spacer";
+import EventConfetti from "@/components/Confetti";
 import FaceOrRiskWaitingRoom from "@/components/FaceOrRiskWaitingRoom";
 
 // Utils - lib
@@ -15,6 +16,9 @@ export default function Home() {
 
   // Waiting state
   const [isWaiting, setIsWaiting] = useState(false);
+
+  // New YEAR confetti state
+  const [isExploding, setIsExploding] = useState(true);
 
   // Generate random RoomID String
   const roomID = CreateRoomIDString(10);
@@ -38,6 +42,12 @@ export default function Home() {
       <Spacer>
         <section className="w-full h-full flex flex-col gap-10 justify-center items-center text-center">
           <div className="w-full flex flex-col gap-3">
+            <div className="flex justify-center items-center">
+              <p className="py-2 animate-bounce px-4 shadow-md no-underline rounded-full bg-[var(--secondary-color)] text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2">
+                <span className="mr-2 animate-spin">🎊</span>
+                <span className="animate-pulse"> Happy New YEAR</span>
+              </p>
+            </div>
             <div className="game-title text-[30vw] md:text-[12vw] face_or_risk_font">
               <span> Face </span>
               <span> or </span>
@@ -69,6 +79,9 @@ export default function Home() {
 
       {/* Wait in the Waiting Room for few secs*/}
       {isWaiting && <FaceOrRiskWaitingRoom />}
+
+      {/* New YEAR confetti*/}
+      {/* <EventConfetti /> */}
     </main>
   );
 }

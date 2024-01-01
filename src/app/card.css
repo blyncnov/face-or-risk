@@ -16,6 +16,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 200ms;
+
+  /* animation: 700ms ease 0s 1 normal forwards running swap; */
 }
 
 .card:nth-last-child(n + 4) {
