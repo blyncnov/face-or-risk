@@ -21,7 +21,7 @@ const RaiseAmPage = () => {
     let cnv = p5.createCanvas(500, 300).parent(canvasParentRef);
 
     cnv.mousePressed((event) => {
-      console.log("Clicked on the canvas. Event:", event);
+      // console.log("Clicked on the canvas. Event:", event);
     });
   };
 
