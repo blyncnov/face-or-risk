@@ -32,7 +32,11 @@ const FaceOrRiskCard = ({
           </h1>
         </div>
         <div className="w-full text-black text-start">
-          <h1 className="text-2xl">{`#${card.id}`}</h1>
+          {/* <h1 className="text-2xl">{`#${card.id}`}</h1> */}
+          <p className="py-2 px-4 shadow-md no-underline rounded-full bg-[var(--secondary-color)] text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2">
+            <span className="mr-2 animate-spin">🎊</span>
+            <span className="animate-pulse"> Happy New YEAR</span>
+          </p>
         </div>
       </div>
     </div>
