@@ -166,7 +166,13 @@ const GameRoom = () => {
   };
 
   return (
-    <div className="page-not-found w-full min-h-[100dvh] flex flex-col gap-6 justify-center items-center text-center">
+    <div className="page-not-found w-full min-h-[100dvh] flex flex-col justify-center items-center text-center">
+      <div className="relative w-full">
+        <p className="animate-pulse max-w-[90%] mx-auto text-center">
+          Players are expected to select their turn&apos;s card by TAPPING on
+          it.
+        </p>
+      </div>
       <Suspense fallback={<p>Loading decks...</p>}>
         <div ref={StackCardRef} className="stack_cards" onClick={ChooseCard}>
           {GameCard.map((card: GameProps) => {
@@ -181,6 +187,14 @@ const GameRoom = () => {
           })}
         </div>
       </Suspense>
+      <div className="flex md:flex-row flex-col gap-3 items-center justify-center">
+        <button
+          className="border rounded-full p-2 px-4 border-[var(--secondary-color)]"
+          onClick={() => alert("🔜 This feature is Coming soon")}
+        >
+          Load custom questions
+        </button>
+      </div>
     </div>
   );
 };
