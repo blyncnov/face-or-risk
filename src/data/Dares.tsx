@@ -32,7 +32,7 @@ export const FaceOrRiskDaresNaughty: FaceOrRiskProps[] = [
 ];
 
 // New year Question
-export const FaceOrRiskNewYear: FaceOrRiskProps[] = [
+export const FaceOrRiskQuestions: FaceOrRiskProps[] = [
   {
     id: 1,
     dare: "Write am the love of your life in your status with name.",
@@ -116,4 +116,4 @@ export const FaceOrRiskNewYear: FaceOrRiskProps[] = [
   },
 ];
 
-export default FaceOrRiskNewYear;
+export default FaceOrRiskQuestions;

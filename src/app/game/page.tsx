@@ -4,21 +4,24 @@ import React, { useState, useRef, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 // components
+import AddQuestion from "./components/AddQuestion";
 import FaceOrRiskCard from "@/app/game/components/Card";
 
 // Utils - libs
 import { ShuffleCardDeck } from "@/lib/ShuffleCards";
 
 // Face or Risk cards
-import { FaceOrRiskProps, FaceOrRiskNewYear } from "@/data/Dares";
+import { FaceOrRiskProps, FaceOrRiskQuestions } from "@/data/Dares";
 
 const GameRoom = () => {
   const searchParams = useSearchParams();
   const StackCardRef = useRef<HTMLDivElement | any>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [IsAddingQuestion, setIsAddingQuestion] = useState(false);
+
   const [GameCard, setGameCard] =
-    useState<FaceOrRiskProps[]>(FaceOrRiskNewYear);
+    useState<FaceOrRiskProps[]>(FaceOrRiskQuestions);
 
   const gameID = searchParams.get("id");
 
@@ -73,11 +76,17 @@ const GameRoom = () => {
       <div className="flex md:flex-row flex-col gap-3 items-center justify-center">
         <button
           className="border rounded-full p-2 px-4 border-[var(--secondary-color)]"
-          onClick={() => alert("🔜 This feature is Coming soon")}
+          onClick={() => setIsAddingQuestion(true)}
         >
-          Load custom questions
+          Add New Card
         </button>
       </div>
+      {IsAddingQuestion && (
+        <AddQuestion
+          setIsAddingQuestion={setIsAddingQuestion}
+          setGameCard={setGameCard}
+        />
+      )}
     </div>
   );
 };
