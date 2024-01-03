@@ -46,8 +46,8 @@ export default function Home() {
           <div className="w-full flex flex-col gap-3">
             <div className="flex justify-center items-center">
               <p className="py-2 animate-bounce px-4 shadow-md no-underline rounded-full bg-[var(--secondary-color)] text-white font-sans font-semibold text-sm border-orange btn-primary hover:text-white hover:bg-orange-light focus:outline-none active:shadow-none mr-2">
-                <span className="mr-2 animate-spin">🎊</span>
-                <span className="animate-pulse"> Happy New YEAR 2024</span>
+                <span className="mr-2 animate-spin">👻</span>
+                <span className="animate-pulse">Are You READY???</span>
               </p>
             </div>
             <div className="game-title text-[30vw] md:text-[12vw] face_or_risk_font">

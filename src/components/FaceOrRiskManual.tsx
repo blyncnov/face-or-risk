@@ -26,16 +26,16 @@ const FaceOrRiskManual = ({
             consequence
             <br />
             <br />
-            1. Players are expected to select their turn&apos;s card by TAPPING
-            on it.
-            <br />
-            <br />
-            2. Players gets to choose Risk (Penalty) if they fail to complete a
+            1. Players gets to choose Risk (Penalty) if they fail to complete a
             dare.
             <br />
             <br />
+            2. Players are expected to select their turn&apos;s card by TAPPING
+            on it.
+            <br />
+            <br />
             3. The player who accomplishes the highest number of dares emerges
-            as the winner.
+            as the most courageous.
           </p>
           <button
             onClick={() => setIsReadManual(false)}

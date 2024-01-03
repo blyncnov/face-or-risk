@@ -4,7 +4,7 @@ import React, { useState, useRef, Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
 // components
-import FaceOrRiskCard from "@/components/Card";
+import FaceOrRiskCard from "@/app/game/components/Card";
 
 // Utils - libs
 import { ShuffleCardDeck } from "@/lib/ShuffleCards";
@@ -26,8 +26,6 @@ const GameRoom = () => {
   useEffect(() => {
     let NewCardDeck = ShuffleCardDeck(GameCard);
     setGameCard(NewCardDeck);
-
-    return () => {};
   }, [GameCard, gameID]);
 
   const ChooseCard = (e: any) => {
